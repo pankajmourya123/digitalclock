@@ -1,159 +1,62 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE log4j:configuration SYSTEM "/var/iib/interface/wpp/neft/inward/properties/log4j/log4j.dtd">
-
-<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
-
-    <!-- Appenders -->
-    <appender name="WPP_KBL_NEFT_IN" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="WARN"/>
-        <param name="File" value="/sysout/wpp/neft/inward/logs/app/WPP_NEFT_IN.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_NEFT_IN_RETRY" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="WARN"/>
-        <param name="File" value="/sysout/wpp/neft/inward/logs/app/WPP_NEFT_IN_RETRY.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_RTGS_IN" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="WARN"/>
-        <param name="File" value="/sysout/wpp/rtgs/inward/logs/app/WPP_RTGS_IN.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_RTGS_IN_RETRY" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="WARN"/>
-        <param name="File" value="/sysout/wpp/rtgs/inward/logs/app/WPP_RTGS_IN_RETRY.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_NEFT_IN_EXC" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="ERROR"/>
-        <param name="File" value="/sysout/wpp/neft/inward/logs/app/WPP_NEFT_IN_EXC.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_RTGS_IN_EXC" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="ERROR"/>
-        <param name="File" value="/sysout/wpp/rtgs/inward/logs/app/WPP_RTGS_IN_EXC.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_NEFT_OUT_EXEC" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="ERROR"/>
-        <param name="File" value="/sysout/wpp/neft/outward/logs/app/WPP_NEFT_OUT_EXEC.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_RTGS_OUT_EXEC" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="ERROR"/>
-        <param name="File" value="/sysout/wpp/rtgs/outward/logs/app/WPP_RTGS_OUT_EXEC.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_INWARD_GATEWAY" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="ERROR"/>
-        <param name="File" value="/sysout/wpp/neft/inward/logs/app/WPP_INWARD_GATEWAY.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_NEFT_OUTWARD_GATEWAY" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="ERROR"/>
-        <param name="File" value="/sysout/wpp/neft/outward/logs/app/WPP_NEFT_OUTWARD_GATEWAY.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_NEFT_OUTWARD_RETRY" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="ERROR"/>
-        <param name="File" value="/sysout/wpp/neft/outward/logs/app/WPP_NEFT_OUTWARD_RETRY.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_RTGS_OUTWARD_GATEWAY" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="ERROR"/>
-        <param name="File" value="/sysout/wpp/rtgs/outward/logs/app/WPP_RTGS_OUTWARD_GATEWAY.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_RTGS_OUTWARD" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="ERROR"/>
-        <param name="File" value="/sysout/wpp/rtgs/outward/logs/app/WPP_RTGS_OUTWARD.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_RTGS_OUTWARD_RETRY" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="ERROR"/>
-        <param name="File" value="/sysout/wpp/rtgs/outward/logs/app/WPP_RTGS_OUTWARD_RETRY.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <appender name="WPP_KBL_NEFT_OUTWARD" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="ERROR"/>
-        <param name="File" value="/sysout/wpp/neft/outward/logs/app/WPP_NEFT_OUTWARD.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <!-- Root Logger Appender -->
-    <appender name="FILE_WITH_FILTER" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="Threshold" value="INFO"/>
-        <param name="File" value="/sysout/default/logs/app/DEFAULT.log"/>
-        <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{HH:mm:ss,SSS} %-5p [%-10t] %m%n"/>
-        </layout>
-    </appender>
-
-    <!-- Loggers -->
-    <logger name="WPP_KBL_NEFT_IN"><level value="WARN"/><appender-ref ref="WPP_KBL_NEFT_IN"/></logger>
-    <logger name="WPP_KBL_NEFT_IN_RETRY"><level value="WARN"/><appender-ref ref="WPP_KBL_NEFT_IN_RETRY"/></logger>
-    <logger name="WPP_KBL_RTGS_IN"><level value="WARN"/><appender-ref ref="WPP_KBL_RTGS_IN"/></logger>
-    <logger name="WPP_KBL_RTGS_IN_RETRY"><level value="WARN"/><appender-ref ref="WPP_KBL_RTGS_IN_RETRY"/></logger>
-    <logger name="WPP_KBL_NEFT_IN_EXC"><level value="ERROR"/><appender-ref ref="WPP_KBL_NEFT_IN_EXC"/></logger>
-    <logger name="WPP_KBL_RTGS_IN_EXC"><level value="ERROR"/><appender-ref ref="WPP_KBL_RTGS_IN_EXC"/></logger>
-    <logger name="WPP_KBL_NEFT_OUT_EXEC"><level value="ERROR"/><appender-ref ref="WPP_KBL_NEFT_OUT_EXEC"/></logger>
-    <logger name="WPP_KBL_RTGS_OUT_EXEC"><level value="ERROR"/><appender-ref ref="WPP_KBL_RTGS_OUT_EXEC"/></logger>
-    <logger name="WPP_KBL_INWARD_GATEWAY"><level value="ERROR"/><appender-ref ref="WPP_KBL_INWARD_GATEWAY"/></logger>
-    <logger name="WPP_KBL_NEFT_OUTWARD_GATEWAY"><level value="ERROR"/><appender-ref ref="WPP_KBL_NEFT_OUTWARD_GATEWAY"/></logger>
-    <logger name="WPP_KBL_NEFT_OUTWARD"><level value="ERROR"/><appender-ref ref="WPP_KBL_NEFT_OUTWARD"/></logger>
-    <logger name="WPP_KBL_NEFT_OUTWARD_RETRY"><level value="ERROR"/><appender-ref ref="WPP_KBL_NEFT_OUTWARD_RETRY"/></logger>
-    <logger name="WPP_KBL_RTGS_OUTWARD_GATEWAY"><level value="ERROR"/><appender-ref ref="WPP_KBL_RTGS_OUTWARD_GATEWAY"/></logger>
-    <logger name="WPP_KBL_RTGS_OUTWARD"><level value="ERROR"/><appender-ref ref="WPP_KBL_RTGS_OUTWARD"/></logger>
-    <logger name="WPP_KBL_RTGS_OUTWARD_RETRY"><level value="ERROR"/><appender-ref ref="WPP_KBL_RTGS_OUTWARD_RETRY"/></logger>
-
-    <!-- Root logger fallback -->
-    <root>
-        <level value="INFO"/>
-        <appender-ref ref="FILE_WITH_FILTER"/>
-    </root>
-
-</log4j:configuration>
+drwxr-x--- 5 iibuser mqm 51 Jul 15 18:12 outward                                                                              
+[iibuser@DCPSYIIBAP01 neft]$ cd inward                                                                                        
+[iibuser@DCPSYIIBAP01 inward]$ ll                                                                                             
+total 0                                                                                                                       
+drwxr-x--- 5 iibuser mqm 46 Jul 15 18:12 file_backup                                                                          
+drwxr-x--- 5 iibuser mqm 47 Jul 15 18:12 logs                                                                                 
+drwxrwxrwx 2 iibuser mqm  6 Jul 15 18:12 mqsiarchive                                                                          
+drwxrwxrwx 2 iibuser mqm  6 Jul 15 18:12 mqsitransit                                                                          
+drwxr-x--- 5 iibuser mqm 77 Jul 15 18:17 properties                                                                           
+[iibuser@DCPSYIIBAP01 inward]$ cd file_backup                                                                                 
+[iibuser@DCPSYIIBAP01 file_backup]$ ll                                                                                        
+total 0                                                                                                                       
+drwxr-x--- 8 iibuser mqm 72 Jul 15 18:12 APGB                                                                                 
+drwxr-x--- 5 iibuser mqm 56 Jul 15 18:12 ftp_fail                                                                             
+drwxr-x--- 8 iibuser mqm 72 Jul 15 18:12 KVGB                                                                                 
+[iibuser@DCPSYIIBAP01 file_backup]$ cd apgb                                                                                   
+-bash: cd: apgb: No such file or directory                                                                                    
+[iibuser@DCPSYIIBAP01 file_backup]$ cd APGB                                                                                   
+[iibuser@DCPSYIIBAP01 APGB]$ ll                                                                                               
+total 0                                                                                                                       
+drwxr-x--- 3 iibuser mqm 25 Aug  4 00:35 972                                                                                  
+drwxr-x--- 3 iibuser mqm 25 Aug  4 13:48 F27                                                                                  
+drwxr-x--- 4 iibuser mqm 40 Aug  4 13:48 N02                                                                                  
+drwxr-x--- 3 iibuser mqm 25 Aug  4 13:31 N04                                                                                  
+drwxr-x--- 3 iibuser mqm 25 Aug  2 10:17 N09                                                                                  
+drwxr-x--- 3 iibuser mqm 61 Aug  4 13:48 N10                                                                                  
+[iibuser@DCPSYIIBAP01 APGB]$ cd N02   
+-bash: cd: N06: No such file or directory                                                                                     
+[iibuser@DCPSYIIBAP01 APGB]$ cd N02                                                                                           
+[iibuser@DCPSYIIBAP01 N02]$ cd A*                                                                                             
+[iibuser@DCPSYIIBAP01 Archive]$ pwd                                                                                           
+/var/iib/interface/kvgb/neft/inward/file_backup/APGB/N02/Archive                                                                                        
+[iibuser@DCPSYIIBAP01 N02]$ ll                                                                                                
+total 10156                                                                                                                   
+drwxrwxrwx 2 iibuser mqm 8376320 Aug  4 13:48 Archive                                                                         
+drwxrwxrwx 2 iibuser mqm       6 Aug  4 13:48 mqsitransit                                                                     
+[iibuser@DCPSYIIBAP01 N02]$ cd Archive                                                                                        
+[iibuser@DCPSYIIBAP01 Archive]$    
+[iibuser@DCPSYIIBAP01 N06]$ cd /var/iib/interface/kvgb/neft/outward/                                                          
+[iibuser@DCPSYIIBAP01 outward]$ ll                                                                                            
+total 0                                                                                                                       
+drwxr-x--- 5 iibuser mqm 63 Jul 15 18:12 backup                                                                               
+drwxr-x--- 4 iibuser mqm 30 Jul 15 18:12 file_backup                                                                          
+drwxr-x--- 5 iibuser mqm 47 Jul 15 18:12 logs                                                                                 
+[iibuser@DCPSYIIBAP01 outward]$ cd file_backup                                                                                
+[iibuser@DCPSYIIBAP01 file_backup]$ ll                                                                                        
+total 0                                                                                                                       
+drwxr-x--- 4 iibuser mqm 28 Jul 15 18:12 APGB                                                                                 
+drwxr-x--- 4 iibuser mqm 28 Jul 15 18:12 KVGB                                                                                 
+[iibuser@DCPSYIIBAP01 file_backup]$ cd APGB                                                                                   
+[iibuser@DCPSYIIBAP01 APGB]$ ll                                                                                               
+total 2104                                                                                                                    
+drwxr-x--- 5 iibuser mqm 1589248 Aug  4 13:52 N06                                                                             
+drwxr-x--- 4 iibuser mqm  180224 Aug  4 13:35 N10                                                                             
+[iibuser@DCPSYIIBAP01 APGB]$ cd N06                                                                                           
+[iibuser@DCPSYIIBAP01 N06]$   
+[iibuser@DCPSYIIBAP01 APGB]$ cd N06                                                                                           
+[iibuser@DCPSYIIBAP01 N06]$ cd A*                                                                                             
+[iibuser@DCPSYIIBAP01 Archive]$ ll                                                                                            
+total 0                                                                                                                       
+[iibuser@DCPSYIIBAP01 Archive]$ pwd                                                                                           
+/var/iib/interface/kvgb/neft/outward/file_backup/APGB/N06/Archive 
